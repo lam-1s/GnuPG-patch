@@ -1,3 +1,17 @@
+************************************************************************
+                              WARNING
+  If you do not trust the patch, DO NOT USE IT.
+  And if you do, USE WITH YOUR OWN RISK!
+
+  You may want to audit the code changed to ensure no backdoor was added.
+  This repo was cloned from the official git repo.
+
+  You may want to merge with upstream changes.
+  This repo can be outdated and contains bugs which is fixed in a more
+  recent commit. Last updated: 2021-10-20
+  UPSTREAM: https://dev.gnupg.org/source/gnupg.git
+************************************************************************
+
                        The GNU Privacy Guard 2
                       =========================
                             Version 2.3
