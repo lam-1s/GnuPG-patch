@@ -138,7 +138,7 @@ gpgsm_gencertreq_tty (ctrl_t ctrl, estream_t output_stream)
   char *keygrip = NULL;
   unsigned int nbits;
   int minbits = 1024;
-  int maxbits = 4096;
+  int maxbits = 32768;
   int defbits = 3072;
   const char *keyusage;
   char *subject_name;

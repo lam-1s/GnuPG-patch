@@ -477,12 +477,12 @@ proc_parameters (ctrl_t ctrl, struct para_data_s *para,
     nbits = 3072;
   else
     nbits = get_parameter_uint (para, pKEYLENGTH);
-  if ((nbits < 1024 || nbits > 4096) && !cardkeyid)
+  if ((nbits < 1024 || nbits > 32768) && !cardkeyid)
     {
       /* The BSI specs dated 2002-11-25 don't allow lengths below 1024. */
       r = get_parameter (para, pKEYLENGTH, 0);
       log_error (_("line %d: invalid key length %u (valid are %d to %d)\n"),
-                 r?r->lnr:0, nbits, 1024, 4096);
+                 r?r->lnr:0, nbits, 1024, 32768);
       xfree (cardkeyid);
       return gpg_error (GPG_ERR_INV_PARAMETER);
     }

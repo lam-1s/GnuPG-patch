@@ -1598,9 +1598,9 @@ gen_elg (int algo, unsigned int nbits, KBNODE pub_root,
       nbits = 2048;
       log_info (_("keysize invalid; using %u bits\n"), nbits );
     }
-  else if (nbits > 4096)
+  else if (nbits > 32768)
     {
-      nbits = 4096;
+      nbits = 32768;
       log_info (_("keysize invalid; using %u bits\n"), nbits );
     }
 
@@ -1820,7 +1820,7 @@ gen_rsa (int algo, unsigned int nbits, KBNODE pub_root,
   int err;
   char *keyparms;
   char nbitsstr[35];
-  const unsigned maxsize = (opt.flags.large_rsa ? 8192 : 4096);
+  const unsigned maxsize = 32768;
 
   log_assert (is_RSA(algo));
 
@@ -2474,7 +2474,7 @@ get_keysize_range (int algo, unsigned int *min, unsigned int *max)
 
     default:
       *min = opt.compliance == CO_DE_VS ? 2048: 1024;
-      *max = 4096;
+      *max = 32768;
       def = 3072;
       break;
     }
